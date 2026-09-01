@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Relax Beauté - Roissy-en-France</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- Style uniquement pour le menu Itinéraire -->
+    <style>
+
+        .itineraire-menu {
+            position: relative;
+        }
+
+        .itineraire-menu summary {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .itineraire-menu summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .itineraire-options {
+            position: absolute;
+
+            left: 50%;
+            top: calc(100% + 10px);
+
+            transform: translateX(-50%);
+
+            min-width: 190px;
+
+            padding: 10px;
+
+            background: white;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0, 0, 0, 0.15);
+
+            z-index: 100;
+        }
+
+        .itineraire-options a {
+            display: block;
+
+            padding: 12px 15px;
+
+            border-radius: 8px;
+
+            color: var(--texte);
+
+            text-decoration: none;
+
+            text-align: left;
+        }
+
+        .itineraire-options a:hover {
+            background:
+                var(--creme);
+
+            color:
+                var(--turquoise);
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- ===============================
+         MENU
+    ================================ -->
+
+    <header class="header">
+
+        <div class="logo">
+            RELAX <span>BEAUTÉ</span>
+        </div>
+
+        <nav class="menu">
+
+            <a href="#accueil">
+                Accueil
+            </a>
+
+            <a href="#salon">
+                Le salon
+            </a>
+
+            <a href="#prestations">
+                Prestations
+            </a>
+
+            <a href="#horaires">
+                Horaires
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ===============================
+         ACCUEIL
+    ================================ -->
+
+    <section
+        class="hero"
+        id="accueil"
+    >
+
+        <div class="hero-contenu">
+
+            <p class="sur-titre">
+                SALON DE COIFFURE
+            </p>
+
+            <h1>
+                Relax Beauté
+            </h1>
+
+            <p class="hero-texte">
+                Prenez le temps de vous détendre
+                et confiez-nous votre style.
+            </p>
+
+            <a
+                href="tel:+33134298592"
+                class="bouton"
+            >
+                Prendre rendez-vous
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===============================
+         LE SALON
+    ================================ -->
+
+    <section
+        class="section salon"
+        id="salon"
+    >
+
+        <div class="salon-texte">
+
+            <p class="sur-titre">
+                BIENVENUE
+            </p>
+
+            <h2>
+                Un moment rien que pour vous
+            </h2>
+
+            <p>
+                Relax Beauté vous accueille dans une
+                atmosphère chaleureuse et apaisante
+                pour prendre soin de vos cheveux
+                et de votre style.
+            </p>
+
+            <p>
+                Coupe, couleur, balayage ou soin :
+                profitez d'un accompagnement personnalisé
+                adapté à vos envies.
+            </p>
+
+        </div>
+
+
+        <div class="salon-image">
+
+            <img
+                src="images/interieur-salon-coiffure.png"
+                alt="Salon Relax Beauté"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- ===============================
+         PRESTATIONS
+    ================================ -->
+
+    <section
+        class="section prestations"
+        id="prestations"
+    >
+
+        <p class="sur-titre">
+            NOS SERVICES
+        </p>
+
+        <h2>
+            Nos prestations
+        </h2>
+
+
+        <div class="grille-prestations">
+
+            <!-- COUPES -->
+
+            <div class="carte">
+
+                <h3>
+                    Coupes
+                </h3>
+
+                <p>
+                    Coupes femme, homme et enfant,
+                    adaptées à votre style et à vos envies.
+                </p>
+
+            </div>
+
+
+            <!-- COULEUR -->
+
+            <div class="carte">
+
+                <h3>
+                    Couleur & Balayage
+                </h3>
+
+                <p>
+                    Couleur, balayage et mèches
+                    pour apporter nuances et lumière.
+                </p>
+
+            </div>
+
+
+            <!-- SOINS -->
+
+            <div class="carte">
+
+                <h3>
+                    Soins
+                </h3>
+
+                <p>
+                    Des soins adaptés pour préserver
+                    la beauté et la vitalité de vos cheveux.
+                </p>
+
+            </div>
+
+
+            <!-- LISSAGE -->
+
+            <div class="carte">
+
+                <h3>
+                    Lissage
+                </h3>
+
+                <p>
+                    Des prestations de lissage
+                    pour une chevelure lisse et soignée.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===============================
+         HORAIRES
+    ================================ -->
+
+    <section
+        class="section horaires"
+        id="horaires"
+    >
+
+        <div>
+
+            <p class="sur-titre clair">
+                VENEZ NOUS VOIR
+            </p>
+
+            <h2>
+                Horaires
+            </h2>
+
+        </div>
+
+
+        <div class="liste-horaires">
+
+            <p>
+                <strong>Lundi</strong>
+                <span>Fermé</span>
+            </p>
+
+            <p>
+                <strong>Mardi</strong>
+                <span>10h00 – 18h30</span>
+            </p>
+
+            <p>
+                <strong>Mercredi</strong>
+                <span>9h30 – 19h00</span>
+            </p>
+
+            <p>
+                <strong>Jeudi</strong>
+                <span>9h30 – 19h00</span>
+            </p>
+
+            <p>
+                <strong>Vendredi</strong>
+                <span>9h30 – 19h00</span>
+            </p>
+
+            <p>
+                <strong>Samedi</strong>
+                <span>9h00 – 17h00</span>
+            </p>
+
+            <p>
+                <strong>Dimanche</strong>
+                <span>Fermé</span>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===============================
+         CONTACT
+    ================================ -->
+
+    <section
+        class="section contact"
+        id="contact"
+    >
+
+        <p class="sur-titre">
+            CONTACT
+        </p>
+
+        <h2>
+            Relax Beauté
+        </h2>
+
+        <p>
+            2 place du Pays de France
+        </p>
+
+        <p>
+            95700 Roissy-en-France
+        </p>
+
+
+        <div class="infos-pratiques">
+
+            <p>
+                🅿️ Parking à proximité
+            </p>
+
+        </div>
+
+
+        <div class="contact-boutons">
+
+            <!-- APPEL -->
+
+            <a
+                href="tel:+33134298592"
+                class="bouton"
+            >
+                Appeler
+            </a>
+
+
+            <!-- ITINÉRAIRE -->
+
+            <details class="itineraire-menu">
+
+                <summary class="bouton secondaire">
+                    Itinéraire
+                </summary>
+
+                <div class="itineraire-options">
+
+                    <a
+                        href="https://www.google.com/maps/dir/?api=1&destination=Relax+Beauté,+2+place+du+Pays+de+France,+95700+Roissy-en-France"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Google Maps
+                    </a>
+
+
+                    <a
+                        href="https://maps.apple.com/?daddr=2+place+du+Pays+de+France,+95700+Roissy-en-France"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Apple Plans
+                    </a>
+
+
+                    <a
+                        href="https://www.waze.com/ul?q=2+place+du+Pays+de+France,+95700+Roissy-en-France&navigate=yes"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Waze
+                    </a>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===============================
+         FOOTER
+    ================================ -->
+
+    <footer>
+
+        <p>
+            © Relax Beauté
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
