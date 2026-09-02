@@ -126,10 +126,14 @@ body {
 
     min-height: 650px;
 
-    display: flex;
-    align-items: center;
+    display:
+        flex;
 
-    padding: 80px 8%;
+    align-items:
+        center;
+
+    padding:
+        80px 8%;
 
     background:
         linear-gradient(
@@ -140,10 +144,13 @@ body {
             rgba(32, 58, 95, 0.25) 58%,
             rgba(32, 58, 95, 0) 72%
         ),
-        url("images/hero-salon-coiffure.png");
+        url("images/hero-salon-coiffure.webp");
 
-    background-size: cover;
-    background-position: center;
+    background-size:
+        cover;
+
+    background-position:
+        center;
 }
 
 
@@ -215,27 +222,41 @@ body {
 
 .bouton {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items:
+        center;
 
-    padding: 15px 30px;
+    justify-content:
+        center;
 
-    min-height: 50px;
+    padding:
+        15px 30px;
 
-    border-radius: 30px;
+    min-height:
+        50px;
 
-    background: var(--turquoise);
+    border-radius:
+        30px;
 
-    color: white;
+    background:
+        var(--turquoise);
 
-    text-decoration: none;
-    font-weight: bold;
+    color:
+        white;
 
-    line-height: 1;
+    text-decoration:
+        none;
 
-    transition: 0.2s;
+    font-weight:
+        bold;
+
+    line-height:
+        1;
+
+    transition:
+        0.2s;
 }
 
 
@@ -363,11 +384,6 @@ body {
     display:
         grid;
 
-    /*
-       Le navigateur choisit automatiquement
-       le nombre de cartes par ligne.
-    */
-
     grid-template-columns:
         repeat(
             auto-fit,
@@ -444,6 +460,7 @@ body {
         16px;
 }
 
+
 /* =========================================
    HORAIRES
 ========================================= */
@@ -508,8 +525,9 @@ body {
 
     border-bottom:
         1px solid
-        rgba(255,255,255,0.2);
+        rgba(255, 255, 255, 0.2);
 }
+
 
 /* =========================================
    CONTACT
@@ -551,6 +569,101 @@ body {
 
     gap:
         15px;
+}
+
+
+/* =========================================
+   MENU ITINÉRAIRE
+========================================= */
+
+.itineraire-menu {
+
+    position:
+        relative;
+}
+
+
+.itineraire-menu summary {
+
+    list-style:
+        none;
+
+    cursor:
+        pointer;
+}
+
+
+.itineraire-menu summary::-webkit-details-marker {
+
+    display:
+        none;
+}
+
+
+.itineraire-options {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        calc(100% + 10px);
+
+    transform:
+        translateX(-50%);
+
+    min-width:
+        190px;
+
+    padding:
+        10px;
+
+    background:
+        white;
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.15);
+
+    z-index:
+        100;
+}
+
+
+.itineraire-options a {
+
+    display:
+        block;
+
+    padding:
+        12px 15px;
+
+    border-radius:
+        8px;
+
+    color:
+        var(--texte);
+
+    text-decoration:
+        none;
+
+    text-align:
+        left;
+}
+
+
+.itineraire-options a:hover {
+
+    background:
+        var(--creme);
+
+    color:
+        var(--turquoise);
 }
 
 
@@ -637,12 +750,6 @@ footer {
             column;
     }
 
-
-    /*
-       auto-fit gère déjà la grille,
-       mais on force une seule colonne
-       sur les petits écrans.
-    */
 
     .grille-prestations {
 
