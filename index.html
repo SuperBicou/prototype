@@ -184,8 +184,6 @@
         }
 
 
-        /* IMAGE HERO */
-
         .hero-image {
 
             position:
@@ -214,7 +212,7 @@
         }
 
 
-        /* DÉGRADÉ PAR-DESSUS L'IMAGE */
+        /* Dégradé au-dessus de l'image */
 
         .hero::before {
 
@@ -495,19 +493,12 @@
             id="accueil"
         >
 
-
-            <!--
-                Image principale :
-                chargement immédiat car elle est visible
-                dès l'ouverture de la page.
-            -->
-
             <img
                 class="hero-image"
                 src="images/hero-salon-coiffure.webp"
                 alt=""
-                width="1920"
-                height="1080"
+                width="704"
+                height="941"
                 loading="eager"
                 fetchpriority="high"
             >
@@ -591,10 +582,15 @@
             <div class="salon-image">
 
                 <img
-                    src="images/interieur-salon-coiffure.webp"
+                    src="images/interieur-salon-coiffure-752.webp"
+                    srcset="
+                        images/interieur-salon-coiffure-400.webp 400w,
+                        images/interieur-salon-coiffure-752.webp 752w
+                    "
+                    sizes="(max-width: 800px) 84vw, 42vw"
                     alt="Salon Relax Beauté"
-                    width="1200"
-                    height="800"
+                    width="752"
+                    height="564"
                     loading="lazy"
                     decoding="async"
                 >
@@ -613,7 +609,6 @@
             id="prestations"
         >
 
-
             <p class="sur-titre">
                 NOS SERVICES
             </p>
@@ -627,8 +622,6 @@
             <div class="grille-prestations">
 
 
-                <!-- COUPES -->
-
                 <div class="carte">
 
                     <h3>
@@ -636,16 +629,12 @@
                     </h3>
 
                     <p>
-
                         Coupes femme, homme et enfant,
                         adaptées à votre style et à vos envies.
-
                     </p>
 
                 </div>
 
-
-                <!-- COULEUR -->
 
                 <div class="carte">
 
@@ -654,16 +643,12 @@
                     </h3>
 
                     <p>
-
                         Couleur, balayage et mèches
                         pour apporter nuances et lumière.
-
                     </p>
 
                 </div>
 
-
-                <!-- SOINS -->
 
                 <div class="carte">
 
@@ -672,16 +657,12 @@
                     </h3>
 
                     <p>
-
                         Des soins adaptés pour préserver
                         la beauté et la vitalité de vos cheveux.
-
                     </p>
 
                 </div>
 
-
-                <!-- LISSAGE -->
 
                 <div class="carte">
 
@@ -690,10 +671,8 @@
                     </h3>
 
                     <p>
-
                         Des prestations de lissage
                         pour une chevelure lisse et soignée.
-
                     </p>
 
                 </div>
@@ -809,8 +788,6 @@
             <div class="contact-boutons">
 
 
-                <!-- APPEL -->
-
                 <a
                     href="tel:+33134298592"
                     class="bouton"
@@ -818,8 +795,6 @@
                     Appeler
                 </a>
 
-
-                <!-- ITINÉRAIRE -->
 
                 <details class="itineraire-menu">
 
@@ -892,5 +867,3 @@
 </body>
 
 </html>
-
-
