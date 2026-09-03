@@ -2,9 +2,13 @@
 <html lang="fr">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Relax Beauté - Roissy-en-France</title>
 
@@ -13,15 +17,34 @@
         content="Relax Beauté, salon de coiffure à Roissy-en-France. Coupes, couleurs, balayages, soins et lissages dans une ambiance chaleureuse et apaisante."
     >
 
-    <!-- Préchargement de l'image hero (LCP probable) -->
-    <link rel="preload" as="image" href="images/hero-salon-coiffure.webp" fetchpriority="high">
 
-    <!-- Préchargement de la feuille de style -->
-    <link rel="preload" href="style.css" as="style">
+    <!-- Préchargement de l'image principale -->
+    <link
+        rel="preload"
+        as="image"
+        href="images/hero-salon-coiffure.webp"
+        type="image/webp"
+        fetchpriority="high"
+    >
 
-    <!-- CSS critique : uniquement ce qui sert au premier écran -->
+
+    <!-- CSS complet téléchargé sans bloquer le premier rendu -->
+    <link
+        rel="preload"
+        href="style.css"
+        as="style"
+        onload="this.onload=null; this.rel='stylesheet'"
+    >
+
+
+    <!-- =========================================
+         CSS CRITIQUE
+    ========================================== -->
+
     <style>
+
         :root {
+
             --turquoise-fonce: #1f3f66;
             --turquoise: #356da8;
             --turquoise-clair: #8fb7dd;
@@ -44,25 +67,29 @@
 
 
         body {
+
             margin: 0;
 
             font-family:
                 Arial,
                 sans-serif;
 
-            color: var(--texte);
+            color:
+                var(--texte);
 
             background:
                 var(--creme);
         }
 
 
-        /* ==============================
+        /* =========================================
            HEADER
-        ============================== */
+        ========================================= */
 
         .header {
-            display: flex;
+
+            display:
+                flex;
 
             justify-content:
                 space-between;
@@ -82,6 +109,7 @@
 
 
         .logo {
+
             font-size:
                 24px;
 
@@ -94,12 +122,14 @@
 
 
         .logo span {
+
             color:
                 var(--turquoise-clair);
         }
 
 
         .menu {
+
             display:
                 flex;
 
@@ -109,6 +139,7 @@
 
 
         .menu a {
+
             color:
                 white;
 
@@ -121,38 +152,107 @@
 
 
         .menu a:hover {
+
             color:
                 var(--turquoise-clair);
         }
 
 
-        /* ==============================
+        /* =========================================
            HERO
-        ============================== */
+        ========================================= */
 
         .hero {
-            min-height: 650px;
 
-            display: flex;
-            align-items: center;
+            position:
+                relative;
 
-            padding: 80px 8%;
+            min-height:
+                650px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            padding:
+                80px 8%;
+
+            overflow:
+                hidden;
+        }
+
+
+        /* IMAGE HERO */
+
+        .hero-image {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            display:
+                block;
+
+            object-fit:
+                cover;
+
+            object-position:
+                center;
+
+            z-index:
+                0;
+        }
+
+
+        /* DÉGRADÉ PAR-DESSUS L'IMAGE */
+
+        .hero::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
 
             background:
-                linear-gradient(90deg,
+                linear-gradient(
+                    90deg,
                     rgba(32, 58, 95, 0.98) 0%,
                     rgba(32, 58, 95, 0.95) 30%,
                     rgba(32, 58, 95, 0.70) 45%,
                     rgba(32, 58, 95, 0.25) 58%,
-                    rgba(32, 58, 95, 0) 72%),
-                url("images/hero-salon-coiffure.webp");
+                    rgba(32, 58, 95, 0) 72%
+                );
 
-            background-size: cover;
-            background-position: center;
+            z-index:
+                1;
+
+            pointer-events:
+                none;
         }
 
 
         .hero-contenu {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
             max-width:
                 650px;
 
@@ -162,6 +262,7 @@
 
 
         .sur-titre {
+
             color:
                 var(--turquoise);
 
@@ -177,12 +278,14 @@
 
 
         .hero .sur-titre {
+
             color:
                 var(--turquoise-clair);
         }
 
 
         .hero h1 {
+
             margin:
                 10px 0 20px;
 
@@ -195,6 +298,7 @@
 
 
         .hero-texte {
+
             max-width:
                 500px;
 
@@ -209,36 +313,52 @@
         }
 
 
-        /* ==============================
+        /* =========================================
            BOUTON HERO
-        ============================== */
+        ========================================= */
 
         .bouton {
-            display: inline-flex;
 
-            align-items: center;
-            justify-content: center;
+            display:
+                inline-flex;
 
-            padding: 15px 30px;
+            align-items:
+                center;
 
-            min-height: 50px;
+            justify-content:
+                center;
 
-            border-radius: 30px;
+            padding:
+                15px 30px;
 
-            background: var(--turquoise);
+            min-height:
+                50px;
 
-            color: white;
+            border-radius:
+                30px;
 
-            text-decoration: none;
-            font-weight: bold;
+            background:
+                var(--turquoise);
 
-            line-height: 1;
+            color:
+                white;
 
-            transition: 0.2s;
+            text-decoration:
+                none;
+
+            font-weight:
+                bold;
+
+            line-height:
+                1;
+
+            transition:
+                0.2s;
         }
 
 
         .bouton:hover {
+
             background:
                 #5a92cf;
 
@@ -247,13 +367,15 @@
         }
 
 
-        /* ==============================
+        /* =========================================
            MOBILE CRITIQUE
-        ============================== */
+        ========================================= */
 
         @media (max-width: 800px) {
 
+
             .header {
+
                 flex-direction:
                     column;
 
@@ -263,6 +385,7 @@
 
 
             .menu {
+
                 flex-wrap:
                     wrap;
 
@@ -275,6 +398,7 @@
 
 
             .hero {
+
                 min-height:
                     550px;
 
@@ -287,35 +411,50 @@
 
 
             .hero h1 {
+
                 font-size:
                     48px;
             }
 
 
             .hero-texte {
+
                 font-size:
                     18px;
             }
+
         }
+
     </style>
 
-    <!-- CSS complet -->
-    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS de secours si JavaScript est désactivé -->
+
+    <noscript>
+
+        <link
+            rel="stylesheet"
+            href="style.css"
+        >
+
+    </noscript>
 
 </head>
 
 
 <body>
 
-    <!-- ===============================
+
+    <!-- =========================================
          MENU
-    ================================ -->
+    ========================================== -->
 
     <header class="header">
 
         <div class="logo">
             RELAX <span>BEAUTÉ</span>
         </div>
+
 
         <nav class="menu">
 
@@ -344,11 +483,33 @@
     </header>
 
 
-    <!-- ===============================
-         ACCUEIL
-    ================================ -->
     <main>
-        <section class="hero" id="accueil">
+
+
+        <!-- =========================================
+             ACCUEIL
+        ========================================== -->
+
+        <section
+            class="hero"
+            id="accueil"
+        >
+
+
+            <!--
+                Image principale :
+                chargement immédiat car elle est visible
+                dès l'ouverture de la page.
+            -->
+
+            <img
+                class="hero-image"
+                src="images/hero-salon-coiffure.webp"
+                alt=""
+                loading="eager"
+                fetchpriority="high"
+            >
+
 
             <div class="hero-contenu">
 
@@ -356,16 +517,24 @@
                     SALON DE COIFFURE
                 </p>
 
+
                 <h1>
                     Relax Beauté
                 </h1>
 
+
                 <p class="hero-texte">
+
                     Prenez le temps de vous détendre
                     et confiez-nous votre style.
+
                 </p>
 
-                <a href="tel:+33134298592" class="bouton">
+
+                <a
+                    href="tel:+33134298592"
+                    class="bouton"
+                >
                     Prendre rendez-vous
                 </a>
 
@@ -374,11 +543,15 @@
         </section>
 
 
-        <!-- ===============================
-         LE SALON
-    ================================ -->
+        <!-- =========================================
+             LE SALON
+        ========================================== -->
 
-        <section class="section salon" id="salon">
+        <section
+            class="section salon"
+            id="salon"
+        >
+
 
             <div class="salon-texte">
 
@@ -386,21 +559,28 @@
                     BIENVENUE
                 </p>
 
+
                 <h2>
                     Un moment rien que pour vous
                 </h2>
 
+
                 <p>
+
                     Relax Beauté vous accueille dans une
                     atmosphère chaleureuse et apaisante
                     pour prendre soin de vos cheveux
                     et de votre style.
+
                 </p>
 
+
                 <p>
+
                     Coupe, couleur, balayage ou soin :
                     profitez d'un accompagnement personnalisé
                     adapté à vos envies.
+
                 </p>
 
             </div>
@@ -408,23 +588,32 @@
 
             <div class="salon-image">
 
-                <img src="images/interieur-salon-coiffure.webp" alt="Salon Relax Beauté" loading="lazy"
-                    decoding="async">
+                <img
+                    src="images/interieur-salon-coiffure.webp"
+                    alt="Salon Relax Beauté"
+                    loading="lazy"
+                    decoding="async"
+                >
 
             </div>
 
         </section>
 
 
-        <!-- ===============================
-         PRESTATIONS
-        ================================ -->
+        <!-- =========================================
+             PRESTATIONS
+        ========================================== -->
 
-        <section class="section prestations" id="prestations">
+        <section
+            class="section prestations"
+            id="prestations"
+        >
+
 
             <p class="sur-titre">
                 NOS SERVICES
             </p>
+
 
             <h2>
                 Nos prestations
@@ -433,6 +622,9 @@
 
             <div class="grille-prestations">
 
+
+                <!-- COUPES -->
+
                 <div class="carte">
 
                     <h3>
@@ -440,12 +632,16 @@
                     </h3>
 
                     <p>
+
                         Coupes femme, homme et enfant,
                         adaptées à votre style et à vos envies.
+
                     </p>
 
                 </div>
 
+
+                <!-- COULEUR -->
 
                 <div class="carte">
 
@@ -454,12 +650,16 @@
                     </h3>
 
                     <p>
+
                         Couleur, balayage et mèches
                         pour apporter nuances et lumière.
+
                     </p>
 
                 </div>
 
+
+                <!-- SOINS -->
 
                 <div class="carte">
 
@@ -468,12 +668,16 @@
                     </h3>
 
                     <p>
+
                         Des soins adaptés pour préserver
                         la beauté et la vitalité de vos cheveux.
+
                     </p>
 
                 </div>
 
+
+                <!-- LISSAGE -->
 
                 <div class="carte">
 
@@ -482,8 +686,10 @@
                     </h3>
 
                     <p>
+
                         Des prestations de lissage
                         pour une chevelure lisse et soignée.
+
                     </p>
 
                 </div>
@@ -493,11 +699,15 @@
         </section>
 
 
-        <!-- ===============================
-         HORAIRES
-        ================================ -->
+        <!-- =========================================
+             HORAIRES
+        ========================================== -->
 
-        <section class="section horaires" id="horaires">
+        <section
+            class="section horaires"
+            id="horaires"
+        >
+
 
             <div>
 
@@ -554,19 +764,25 @@
         </section>
 
 
-        <!-- ===============================
-         CONTACT
-    ================================ -->
+        <!-- =========================================
+             CONTACT
+        ========================================== -->
 
-        <section class="section contact" id="contact">
+        <section
+            class="section contact"
+            id="contact"
+        >
+
 
             <p class="sur-titre">
                 CONTACT
             </p>
 
+
             <h2>
                 Nous contacter
             </h2>
+
 
             <p>
                 2 place du Pays de France
@@ -588,10 +804,18 @@
 
             <div class="contact-boutons">
 
-                <a href="tel:+33134298592" class="bouton">
+
+                <!-- APPEL -->
+
+                <a
+                    href="tel:+33134298592"
+                    class="bouton"
+                >
                     Appeler
                 </a>
 
+
+                <!-- ITINÉRAIRE -->
 
                 <details class="itineraire-menu">
 
@@ -599,24 +823,36 @@
                         Itinéraire
                     </summary>
 
+
                     <div class="itineraire-options">
 
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=Relax+Beauté,+2+place+du+Pays+de+France,+95700+Roissy-en-France"
-                            target="_blank" rel="noopener noreferrer">
+
+                        <a
+                            href="https://www.google.com/maps/dir/?api=1&destination=Relax+Beauté,+2+place+du+Pays+de+France,+95700+Roissy-en-France"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Google Maps
                         </a>
 
 
-                        <a href="https://maps.apple.com/?daddr=2+place+du+Pays+de+France,+95700+Roissy-en-France"
-                            target="_blank" rel="noopener noreferrer">
+                        <a
+                            href="https://maps.apple.com/?daddr=2+place+du+Pays+de+France,+95700+Roissy-en-France"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Apple Plans
                         </a>
 
 
-                        <a href="https://www.waze.com/ul?q=2+place+du+Pays+de+France,+95700+Roissy-en-France&navigate=yes"
-                            target="_blank" rel="noopener noreferrer">
+                        <a
+                            href="https://www.waze.com/ul?q=2+place+du+Pays+de+France,+95700+Roissy-en-France&navigate=yes"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Waze
                         </a>
+
 
                     </div>
 
@@ -625,11 +861,14 @@
             </div>
 
         </section>
+
+
     </main>
 
-    <!-- ===============================
+
+    <!-- =========================================
          FOOTER
-    ================================ -->
+    ========================================== -->
 
     <footer>
 
@@ -640,7 +879,11 @@
     </footer>
 
 
-    <script src="script.js" defer></script>
+    <script
+        src="script.js"
+        defer
+    ></script>
+
 
 </body>
 

@@ -20,23 +20,30 @@
 ========================================= */
 
 * {
-    box-sizing: border-box;
+
+    box-sizing:
+        border-box;
 }
 
 
 html {
-    scroll-behavior: smooth;
+
+    scroll-behavior:
+        smooth;
 }
 
 
 body {
-    margin: 0;
+
+    margin:
+        0;
 
     font-family:
         Arial,
         sans-serif;
 
-    color: var(--texte);
+    color:
+        var(--texte);
 
     background:
         var(--creme);
@@ -49,7 +56,8 @@ body {
 
 .header {
 
-    display: flex;
+    display:
+        flex;
 
     justify-content:
         space-between;
@@ -124,7 +132,11 @@ body {
 
 .hero {
 
-    min-height: 650px;
+    position:
+        relative;
+
+    min-height:
+        650px;
 
     display:
         flex;
@@ -135,6 +147,58 @@ body {
     padding:
         80px 8%;
 
+    overflow:
+        hidden;
+}
+
+
+/* =========================================
+   IMAGE HERO
+========================================= */
+
+.hero-image {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        block;
+
+    object-fit:
+        cover;
+
+    object-position:
+        center;
+
+    z-index:
+        0;
+}
+
+
+/* =========================================
+   DÉGRADÉ HERO
+========================================= */
+
+.hero::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
     background:
         linear-gradient(
             90deg,
@@ -143,18 +207,27 @@ body {
             rgba(32, 58, 95, 0.70) 45%,
             rgba(32, 58, 95, 0.25) 58%,
             rgba(32, 58, 95, 0) 72%
-        ),
-        url("images/hero-salon-coiffure.webp");
+        );
 
-    background-size:
-        cover;
+    z-index:
+        1;
 
-    background-position:
-        center;
+    pointer-events:
+        none;
 }
 
 
+/* =========================================
+   CONTENU HERO
+========================================= */
+
 .hero-contenu {
+
+    position:
+        relative;
+
+    z-index:
+        2;
 
     max-width:
         650px;
