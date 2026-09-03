@@ -22,15 +22,20 @@
     <link
         rel="preload"
         as="image"
-        href="images/hero-salon-coiffure.webp"
+        href="images/hero-salon-coiffure-1200.webp"
+        imagesrcset="
+            images/hero-salon-coiffure-480.webp 480w,
+            images/hero-salon-coiffure-1200.webp 1200w
+        "
+        imagesizes="100vw"
         type="image/webp"
         fetchpriority="high"
     >
 
 
-    <!-- CSS complet téléchargé sans bloquer le premier rendu -->
+    <!-- CSS complet -->
     <link
-        rel="preload"
+        rel="stylesheet"
         href="style.css"
     >
 
@@ -481,10 +486,15 @@
 
             <img
                 class="hero-image"
-                src="images/hero-salon-coiffure.webp"
+                src="images/hero-salon-coiffure-1200.webp"
+                srcset="
+                    images/hero-salon-coiffure-480.webp 480w,
+                    images/hero-salon-coiffure-1200.webp 1200w
+                "
+                sizes="100vw"
                 alt=""
-                width="704"
-                height="941"
+                width="1200"
+                height="675"
                 loading="eager"
                 fetchpriority="high"
             >
