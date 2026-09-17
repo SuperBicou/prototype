@@ -1,0 +1,11 @@
+# Relax Beauté - Roissy-en-France
+
+Site du salon de coiffure Relax Beauté situé à Roissy-en-France.
+
+## Contenu
+
+Le site présente le salon, ses prestations, ses horaires et ses informations de contact.
+
+## Liens
+
+- [Accueil](https://prototype-brr.pages.dev/)
